@@ -1,0 +1,73 @@
+# INSTRUÇÕES DO FRAMEWORK
+
+
+## CONFIGURAÇÃO INICIAL
+
+1. Executar o comando para installar o cypress no ambiente e o cucumber
+
+* npm install --save-dev cypress cypress-cucumber-preprocessor
+<br>
+
+2. Abra o gerenciador do cypress 
+
+* npx cypress open
+<br>
+
+3. Configure o script do cucumber dentro da pasta cypress/plugins/index.js
+<br>
+
+~~~javascript
+const cucumber = require('cypress-cucumber-preprocessor').default
+module.exports = (on, config) => {
+  on('file:preprocessor', cucumber())
+}
+~~~
+<br>
+
+## ESTRUTURA DO PROJETO
+
+<img source="https://cwi.com.br/wp-content/uploads/2020/10/GC_4.png" alt="estrutura">
+
+1. **integration:** nesta pasta colocamos os nossos arquivos com os cenários de teste escritos no formato BDD.
+<br>
+
+2. **plugin/index.js:** este arquivo é destinado para configuração de plugins. Utilizamos ele ao configurar o Cucumber.
+<br>
+
+3. **support:** dentro desta pasta colocamos os steps, os scripts e o mapeamento de elementos de nossos testes.
+
+4. **node_modules:** aqui ficam os arquivos de funcionamento do Cypress e do Cucumber. Normalmente não precisamos mexer nesta pasta.
+<br>
+
+5. **cypress.json:** neste arquivo podemos realizar configurações globais do nosso projeto. Ex.: criar variáveis globais, definir resolução do navegador, setar uma URL padrão, entre outros.
+
+
+### Pastas adicionais
+
+<img src="https://cwi.com.br/wp-content/uploads/2020/10/GC_5.png" alt="pastas adicionais">
+
+
+
+6. **steps:** nesta pasta colocamos os passos que farão a conexão entre o que escrevemos em BDD e os scripts que fazemos em Cypress.
+<br>
+
+7. **pageobjects:** aqui deixamos os scripts feitos em Cypress.
+A ideia do page objects é a de criarmos um arquivo.js para cada página ou fluxo do site. Dessa forma, mantemos a organização e facilitamos a manutenção do código, pois colocamos no arquivo os comandos que são executados na página/fluxo correspondentes ao nome do arquivo.
+Ex.: HomePage.js, PdpPage.js, Checkout.js.
+
+<br>
+
+8. **elements:** possui o mesmo conceito do page objects, mas aqui colocamos os elementos da página. Tal organização permite que elementos sejam reutilizados e tenham fácil manutenção.
+Ex.: HomeElements.js, PdpElements.js, CheckoutElements.js.
+
+<br>
+
+
+## BDD
+
+
+<br>
+
+## EXECUÇÃO DO COMANDO
+
+* npm run test:chrome
