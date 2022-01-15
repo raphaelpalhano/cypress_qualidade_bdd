@@ -26,7 +26,7 @@ module.exports = (on, config) => {
 
 ## ESTRUTURA DO PROJETO
 
-<img source="https://cwi.com.br/wp-content/uploads/2020/10/GC_4.png" alt="estrutura">
+<img src="https://cwi.com.br/wp-content/uploads/2020/10/GC_4.png" alt="estrutura">
 
 1. **integration:** nesta pasta colocamos os nossos arquivos com os cenários de teste escritos no formato BDD.
 <br>
