@@ -10,5 +10,5 @@ Feature: Acesso a plataforma com usuário cadastrado
     Given o acesso a pltaforma automation
     When acessa a página de login
     And efetua o login 
-    #Então deve exibir o título ""
+    Then deve exibir o título ""
 
